@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Pal - Welcome</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="/manifest.json">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGP7FMD5G6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FGP7FMD5G6');
+  </script>
+  <style>
+    /* Reset and base styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #000000, #000000);
+      color: #fff;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* Page layout */
+    .entry-page {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      position: relative;
+      padding: 20px;
+    }
+
+    /* Header styles */
+    .entry-header {
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .logo {
+      width: 150px;
+      height: auto;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .headline {
+      color: #FFD700;
+      font-size: 2.5em;
+      margin-top: 20px;
+      animation: fadeIn 2s ease-in-out, colorChange 3s infinite;
+    }
+
+    @keyframes colorChange {
+      0%, 100% {
+        color: #FFD700;
+      }
+      50% {
+        color: red;
+      }
+    }
+
+    /* Enter button */
+    .enter-button {
+      background-color: #FFD700;
+      color: #000000;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 5px;
+      margin-top: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      animation: pulse 1.5s infinite;
+      transition: background-color 0.3s;
+    }
+
+    .enter-button:hover {
+      background-color: #e6c200;
+    }
+
+    .scroll-prompt {
+      margin-top: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .arrow {
+      font-size: 2em;
+      color: #FFD700;
+      animation: bounce 2s infinite;
+    }
+
+    /* Description */
+    .description {
+      margin-top: 20px;
+      color: #f0e68c;
+      font-size: 1.2em;
+      padding: 0 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Install button */
+    .install-button {
+      background-color: #FFD700;
+      color: #2c2c2c;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s, transform 0.3s;
+      margin-top: 20px;
+    }
+
+    .install-button:hover {
+      background-color: #FFC107;
+      transform: translateY(-2px);
+    }
+
+    .install-button:active {
+      background-color: #FFB300;
+      transform: translateY(0);
+    }
+
+    .install-button:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.5);
+    }
+
+    /* Media queries for responsiveness */
+    @media (max-width: 768px) {
+      .headline {
+        font-size: 1.5em;
+      }
+
+      .enter-button {
+        font-size: 1em;
+        padding: 10px 20px;
+      }
+
+      .description {
+        font-size: 1em;
+      }
+    }
+
+    /* Footer styles */
+    .entry-footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      display: inline;
+      margin: 0 10px;
+    }
+
+    .footer-links a {
+      color: #FFD700;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Keyframe animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="entry-page">
+    <header class="entry-header">
+      <img src="logo.png" alt="Academic Pal Logo" class="logo">
+      <h1 class="headline">Welcome to Academic Pal</h1>
+    </header>
+    <main class="entry-main">
+      <button id="install-button" style="display: none;">Install App</button>
+
+      <button class="enter-button">Enter</button>
+      <div class="scroll-prompt">
+        <span class="arrow">↓</span>
+      </div>
+      <p class="description">
+        Empowering students to reach their full potential with comprehensive resources and support.
+      </p>
+    </main>
+    <footer class="entry-footer">
+      <ul class="footer-links">
+        <li><a href="https://hari-hara7.github.io/new-academic-pal/#about">About Us</a></li>
+        <li><a href="https://academicpal.vercel.app/#contact">Contact</a></li>
+        <li><a href="https://www.privacypolicies.com/live/0b697d9c-92ec-451c-8619-68f264fabd20">Privacy Policy</a></li>
+      </ul>
+    </footer>
+  </div>
+
+  <script>
+    // Event listener for "Enter" button
+    document.querySelector('.enter-button').addEventListener('click', () => {
+      window.location.href = 'https://hari-hara7.github.io/pop-page/';
+    });
+
+    // Service worker and PWA install handling
+    let deferredPrompt;
+    const installButton = document.getElementById('install-button');
+
+    // Listen for the beforeinstallprompt event
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent the mini-infobar from appearing on mobile
+      e.preventDefault();
+      // Stash the event so it can be triggered later.
+      deferredPrompt = e;
+      // Show the install button
+      installButton.style.display = 'block';
+
+      installButton.addEventListener('click', () => {
+        // Hide the install button
+        installButton.style.display = 'none';
+        // Show the install prompt
+        deferredPrompt.prompt();
+        // Wait for the user to respond to the prompt
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the A2HS prompt');
+          } else {
+            console.log('User dismissed the A2HS prompt');
+          }
+          deferredPrompt = null;
+        });
+      });
+    });
+
+    // Log the appinstalled event
+    window.addEventListener('appinstalled', () => {
+      console.log('PWA installed');
+    });
+
+    // Register the service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(registration => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        }).catch(error => {
+          console.log('Service Worker registration failed:', error);
+        });
+    }
+  </script>
+</body>
+</html>
